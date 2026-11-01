@@ -1,13 +1,13 @@
 # Node Tree to Text
 
-シーンツリーで右クリックしたノードと、その子孫をテキストにしてクリップボードにコピーする Godot 4.4 以降向けのエディターアドオンです。
+An editor addon for Godot 4.4 and later that turns the node you right-click in the Scene tree, along with all of its descendants, into text and copies it to the clipboard.
 
-## 使い方
+## Usage
 
-1. `addons/node_tree_to_text` フォルダーをプロジェクトに配置します。このプロジェクトには配置・有効化済みです。
-2. **プロジェクト → プロジェクト設定 → プラグイン** で **Node Tree to Text** を有効にします。
-3. シーンツリーで対象のノードを右クリックし、**ノードツリーをテキストとしてコピー** を選びます。
-4. テキストエディターやチャットなどに貼り付けます。
+1. Place the `addons/node_tree_to_text` folder in your project. It is already installed and enabled in this project.
+2. Enable **Node Tree to Text** in **Project → Project Settings → Plugins**.
+3. Right-click the target node in the Scene tree and choose **Copy Node Tree as Text**.
+4. Paste it into a text editor, a chat window, or anywhere else.
 
 ```text
 Fields/N/Table [Node3D]
@@ -19,18 +19,18 @@ Fields/N/Table [Node3D]
     └── SwitchOffButton [FieldButton3DStarter]
 ```
 
-- 各行は `ノード名 [クラス名]` です。先頭行のみ、編集中のシーンのルート名からのパスを表示します。
-- クラス名には、アタッチしたスクリプトの `class_name` を優先します。未定義の場合は継承元の `class_name`、それもなければ `Node3D` などの組み込みクラス名を表示します。
-- 子ノードを折りたたんでいても、インスタンス化したシーンの子を含め、子孫をツリー順に出力します。エンジン内部用ノードは除外します。
-- 複数選択にも対応します。ツリーごとに空行を入れ、親と子の両方を選んだ場合は重複を除きます。
-- プロパティ値や注釈は出力しません。
+- Each line is formatted as `node name [class name]`. Only the first line shows the path from the root name of the scene being edited.
+- For the class name, the `class_name` of the attached script takes priority. If it is undefined, the `class_name` of the parent class is used, and if that is also undefined, the built-in class name such as `Node3D` is shown.
+- Even if child nodes are collapsed, descendants are output in tree order, including the children of instanced scenes. Internal engine nodes are excluded.
+- Multi-selection is supported. A blank line separates each tree, and when both a parent and its child are selected, duplicates are removed.
+- Property values and annotations are not output.
 
-Godot の公式 `EditorContextMenuPlugin` API を使用します。
+This addon uses Godot's official `EditorContextMenuPlugin` API.
 https://docs.godotengine.org/en/4.6/classes/class_editorcontextmenuplugin.html
 
-## 開発時の検証
+## Verifying during development
 
-このリポジトリのルートで次を実行すると、出力形式・カスタムクラス名・複数選択のテストを実行できます。
+Run the following from the root of this repository to run the tests for output formatting, custom class names, and multi-selection.
 
 ```sh
 godot --headless --path . --script tests/test_tree_text.gd
