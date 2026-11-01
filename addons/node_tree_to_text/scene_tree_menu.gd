@@ -6,7 +6,7 @@ const TreeText = preload("tree_text.gd")
 
 func _popup_menu(paths: PackedStringArray) -> void:
 	if not paths.is_empty():
-		add_context_menu_item("copy node tree to clipboard", _copy_tree)
+		add_context_menu_item("Copy node tree to clipboard", _copy_tree)
 
 
 func _copy_tree(nodes: Array) -> void:
