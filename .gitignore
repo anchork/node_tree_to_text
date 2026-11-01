@@ -1,0 +1,42 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot-specific
+*.translation
+export_presets.cfg
+.gdignore
+
+# Exported builds
+build/
+export/
+*.pck
+*.zip
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temp files
+logs/
+*.log
+*.tmp
+
+# Env / secrets
+.env
+.env.*
+
+addons/*
+!addons/node_tree_to_text
