@@ -2,11 +2,12 @@
 extends EditorContextMenuPlugin
 
 const TreeText = preload("tree_text.gd")
+const Icon = preload("icon.svg")
 
 
 func _popup_menu(paths: PackedStringArray) -> void:
 	if not paths.is_empty():
-		add_context_menu_item("Copy node tree to clipboard", _copy_tree)
+		add_context_menu_item("Copy node tree to clipboard", _copy_tree, Icon)
 
 
 func _copy_tree(nodes: Array) -> void:

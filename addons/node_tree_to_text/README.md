@@ -6,7 +6,7 @@ An editor addon for Godot 4.4 and later that turns the node you right-click in t
 
 1. Place the `addons/node_tree_to_text` folder in your project. It is already installed and enabled in this project.
 2. Enable **Node Tree to Text** in **Project → Project Settings → Plugins**.
-3. Right-click the target node in the Scene tree and choose **Copy Node Tree as Text**.
+3. Right-click the target node in the Scene tree and choose **Copy node tree to clipboard**.
 4. Paste it into a text editor, a chat window, or anywhere else.
 
 ```text
